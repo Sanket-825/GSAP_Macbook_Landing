@@ -1,3 +1,118 @@
 1. created folder using command : npm create vite@latest <--Project name->
+
 2. imported Tailwind using command : npm install tailwindcss @tailwindcss/vite
+
 3. when we use ( ) after map we dont have to explicitly use return keyword 
+
+4. We have used zustand : 
+
+    Zustand is a lightweight global state management solution for React. It allows us to create a centralized store using hooks without the complexity of Redux. It avoids provider nesting, reduces boilerplate, and supports selective subscriptions for performance optimization.
+
+    command : npm install zustand clsx
+
+
+5. Error: 
+
+   Zustand expects React, but React is not found in node_modules.
+   Zustand expects react to already be installed in your project.
+   It does NOT install React automatically.
+
+   command : npm install react react-dom
+
+6. command to install three and drei : npm install three @react-three/fiber @react-three/drei
+   Imported Canvas.
+
+7. Canvas is the React Three Fiber equivalent of ReactDOM.createRoot().
+      1. Creates a Three.js Scene
+      2. Creates a WebGLRenderer
+      3. Creates a PerspectiveCamera
+      4. Starts the render loop
+      5. Syncs React reconciliation with Three.js objects
+
+   Box is a helper abstraction from Drei.
+    Under the hood, it expands to:
+   
+      <mesh>
+         <boxGeometry />
+         <meshStandardMaterial />
+      </mesh>
+
+
+   React Three Fiber maps JSX props to underlying Three.js properties.
+
+   So: material-color
+   translates to: mesh.material.color.set(color)
+
+
+Model Rendering : we have models in public/models
+
+1. To use 3d model in react-three-fiber we need to convert it into a react-component,
+   for that we use GLTS into JSX package
+
+   for that we need to install package so go to model using : cd public/ then cd model/
+   run command : npx gltfjsx macbook-14.glb -T
+
+   created folder inside components called models
+   transfered the new jsx file from models to components/models.
+
+   inside the Macbook-14.jsx we did some changes like :
+    1. const texture = useTexture('/screen.png')
+    2. <meshBasicMaterial map={texture} /> 
+    3. function name changed
+
+   Then same do for the macbook-16.glb and macbook.glb
+
+Lights : 
+
+ 1. created a file under components called StudioLights.jsx 
+ 2. import it inside productViewer file
+ 3. rotate-y={Math.PI / 2} : 
+      In JavaScript, rotations in Three.js are measured in radians, not degrees.
+
+      Conversion:
+
+      π radians = 180°
+
+      π / 2 radians = 90°
+
+      π / 4 radians = 45°
+
+Model Switch : 
+
+   1. command : npm install gsap @gsap/react
+                npm install react-responsive (which is used to apply conditional animation logic and layout depending on different device sizes)
+
+   2. After that we need to register our GSAP plugin (we can import it in App.js because thats where our entire application is )
+         Ex : import { ScrollTrigger } from "gsap/all" 
+
+   3. ModelSwitcher.jsx : it will handle transition between 2 different models. 
+                          it will be reponsible for rendering both 14 and 16 Macbook detecticng the size from user UI and animating the transition between 2 models.
+                          it will also presentationControls which will allow users to rotate and inspect the model in 3d.     
+
+   4. {...controlConfig} = controlConfig will be an object where we can define how we want to move around the 3D model
+                           for ex : when you move 3d model laptop once u release drag it will automatically come to its OG position 
+                                    polar : [-Math.PI, Math.PI] = You can think of its like vertical rotations limit,
+                                            it allow to move laptop and slide below to see laptop
+
+ Showcase Section : 
+   
+   1. Switched to new branch showcase : git checkout -b showcase
+      Switches my working directory to that branch
+      Why?
+       In production environments, we never work directly on main because:
+       main should always remain stable and deployable
+       Direct commits can break production
+       It prevents proper code review
+
+   2. in production app we never push straight to main we always implement feature in feature branch and then PR(Pull Request)
+
+   3.For the showcase feature, I created a separate feature branch using git checkout -b
+       showcase instead of working directly on main.
+       All development was done in that branch. After completing the feature, I pushed it and created a Pull Request for review. Once the code was approved and verified, it was merged into main. This ensures production stability, proper review, and clean collaboration workflow.
+
+   4. Swithced to the main branch using command : git switch main
+
+
+Performance Section : 
+
+   1.
