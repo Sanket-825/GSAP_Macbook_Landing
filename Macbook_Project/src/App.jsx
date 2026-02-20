@@ -20,9 +20,9 @@ const App = () => {
       <ProductViewer />
       <Showcase />
       <Performance />
-      {/* <Features />
-      <Highlights />
-      <Footer /> */}
+      <Features />
+      {/* <Highlights /> */}
+      {/* <Footer /> */}
     </main>
   )
 }
