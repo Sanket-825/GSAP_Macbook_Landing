@@ -40,7 +40,7 @@ const Performance = () => {
                     trigger: sectionEl,
                     start: "top bottom",
                     end: "center center",
-                    scrub: 0.5,
+                    scrub: 1,
                     invalidateOnRefresh: true,
                 },
             });
