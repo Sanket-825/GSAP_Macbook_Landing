@@ -118,4 +118,16 @@ Performance Section :
    1. created a new branch using command : git checkout -b finalize-landing-page
 
    2. created a new file under components called Performance.jsx
+
+
+feature Section : 
+
+   1. changes done in store/index.js =>   texture: '/videos/feature-1.mp4',
+                                          setTexture: (texture) => set({texture}),
+
+   2. changes done in models/Macbook.jsx
+
+   3. useVideoTexture() : It is utility function provided by @react-three/drei to which we can just pass the video
+
+   
    
