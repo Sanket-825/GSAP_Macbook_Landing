@@ -166,7 +166,14 @@ Deployment :
 
       git add .
       git commit -m "Prepare GitHub Pages deployment"
-      git push
+      git push 
 
+
+ 1. Create GitHub Workflow File : .github/workflows/deploy.yml
+ 2. git add .
+    git commit -m "Add GitHub Actions deploy"
+    git push 
+
+ 3. Create a Custom Workflow for Vite
 
          
