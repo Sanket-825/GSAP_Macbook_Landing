@@ -129,5 +129,44 @@ feature Section :
 
    3. useVideoTexture() : It is utility function provided by @react-three/drei to which we can just pass the video
 
+Deployment : 
+
+   1. Set base in vite.config.js : 
+
+      import { defineConfig } from 'vite'
+      import react from '@vitejs/plugin-react'
+      import tailwindcss from '@tailwindcss/vite'
+
+      // https://vite.dev/config/
+      export default defineConfig({
+      plugins: [react(), tailwindcss()],
+      base: "/GSAP_Macbook_Landing/",
+      })
+
+   2. Update package.json : 
+
+      "name": "mackbook-project",
+      "private": true,
+      "version": "0.0.0",
+      "type": "module",
+      "homepage": "https://Sanket-825.github.io/GSAP_Macbook_Landing/",
+
+       "scripts": {
+         "dev": "vite",
+         "build": "vite build",
+         "lint": "eslint .",
+         "preview": "vite preview",
+         "predeploy": "npm run build",
+         "deploy": "gh-pages -d dist"
+      },
    
-   
+   3. Install gh-pages : npm install gh-pages --save-dev
+
+   4. Commit & Push : 
+
+      git add .
+      git commit -m "Prepare GitHub Pages deployment"
+      git push
+
+
+         
