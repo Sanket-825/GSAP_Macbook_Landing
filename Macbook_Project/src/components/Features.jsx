@@ -92,6 +92,7 @@ const ModelScroll = () => {
 }
 
 const Features = () => {
+  const base = import.meta.env.BASE_URL
   return (
     <section id="features">
       <h2>See it all in a new light.</h2>
@@ -106,7 +107,7 @@ const Features = () => {
       <div className="absolute inset-0">
         {features.map((feature, index)=>(
           <div key={feature.id} className={clsx('box', `box${index + 1}`, feature.styles)}>
-            <img src={feature.icon} alt={feature.highlight} />
+            <img src={`${base}${feature.icon}`} alt={feature.highlight} />
             <p>
               <span className="text-white">{feature.highlight}</span>
               {feature.text}

@@ -16,9 +16,11 @@ import { Color, SRGBColorSpace } from 'three';
 
 export default function MacbookModel(props) {
 
+  const base = import.meta.env.BASE_URL
+
   const { color, texture, } = useMacbookStore();
 
-  const { nodes, materials, scene } = useGLTF('/models/macbook-transformed.glb')
+  const { nodes, materials, scene } = useGLTF(`${base}models/macbook-transformed.glb`)
 
   const screen = useVideoTexture(texture)
 
@@ -59,4 +61,4 @@ export default function MacbookModel(props) {
   )
 }
 
-useGLTF.preload('/models/macbook-transformed.glb')
+useGLTF.preload(`${import.meta.env.BASE_URL}models/macbook-transformed.glb`)

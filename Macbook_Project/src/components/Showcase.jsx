@@ -6,6 +6,8 @@ const Showcase = () => {
 
     const isTablet = useMediaQuery({query: '(max-width: 1024px)'})
 
+    const base = import.meta.env.BASE_URL
+
     useGSAP(()=>{
         if(!isTablet){
             const timeline = gsap.timeline({
@@ -27,9 +29,9 @@ const Showcase = () => {
   return (
     <section id="showcase">
         <div className="media">
-            <video src="/videos/game.mp4" loop muted autoPlay playsInline></video>
+            <video src={`${import.meta.env.BASE_URL}videos/game.mp4`} loop muted autoPlay playsInline></video>
             <div className="mask">
-                <img src="/mask-logo.svg" alt="logo" />
+                <img src={`${base}mask-logo.svg`} alt="logo" />
             </div>
         </div>
 

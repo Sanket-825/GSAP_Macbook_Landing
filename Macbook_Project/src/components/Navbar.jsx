@@ -1,10 +1,11 @@
 import { navLinks } from '../constants'
 
 const Navbar = () => {
+  const base = import.meta.env.BASE_URL
   return (
     <header>
         <nav>
-            <img src="/logo.svg" alt="Apple logo" />
+            <img src={`${base}logo.svg`} alt="Apple logo" />
 
             <ul>
                 {navLinks.map((link)=>(
@@ -16,10 +17,10 @@ const Navbar = () => {
 
             <div className='flex-center gap-3'>
                 <button>
-                    <img src="/search.svg" alt="Search" />
+                    <img src={`${base}search.svg`} alt="Search" />
                 </button>
                 <button>
-                    <img src="/cart.svg" alt="Cart" />
+                    <img src={`${base}cart.svg`} alt="Cart" />
                 </button>
             </div>
         </nav>
