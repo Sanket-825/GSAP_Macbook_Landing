@@ -26,14 +26,16 @@ const noChangeParts = [
     "Object_10",
 ];
 
+const base = import.meta.env.BASE_URL
+
 const performanceImages = [
-    { id: "p1", src: "/performance1.png" },
-    { id: "p2", src: "/performance2.png" },
-    { id: "p3", src: "/performance3.png" },
-    { id: "p4", src: "/performance4.png" },
-    { id: "p5", src: "/performance5.jpg" },
-    { id: "p6", src: "/performance6.png" },
-    { id: "p7", src: "/performance7.png" },
+  { id: "p1", src: `${base}performance1.png` },
+  { id: "p2", src: `${base}performance2.png` },
+  { id: "p3", src: `${base}performance3.png` },
+  { id: "p4", src: `${base}performance4.png` },
+  { id: "p5", src: `${base}performance5.jpg` },
+  { id: "p6", src: `${base}performance6.png` },
+  { id: "p7", src: `${base}performance7.png` },
 ];
 
 const performanceImgPositions = [
@@ -113,11 +115,11 @@ const features = [
 ];
 
 const featureSequence = [
-    { videoPath: "/videos/feature-1.mp4", boxClass: ".box1", delay: 1 },
-    { videoPath: "/videos/feature-2.mp4", boxClass: ".box2", delay: 0 },
-    { videoPath: "/videos/feature-3.mp4", boxClass: ".box3", delay: 0 },
-    { videoPath: "/videos/feature-4.mp4", boxClass: ".box4", delay: 0 },
-    { videoPath: "/videos/feature-5.mp4", boxClass: ".box5", delay: 0 },
+    { videoPath: `${base}videos/feature-1.mp4`, boxClass: ".box1", delay: 1 },
+    { videoPath: `${base}videos/feature-2.mp4`, boxClass: ".box2", delay: 0 },
+    { videoPath: `${base}videos/feature-3.mp4`, boxClass: ".box3", delay: 0 },
+    { videoPath: `${base}videos/feature-4.mp4`, boxClass: ".box4", delay: 0 },
+    { videoPath: `${base}videos/feature-5.mp4`, boxClass: ".box5", delay: 0 },
 ];
 
 const footerLinks = [
