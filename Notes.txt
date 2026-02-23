@@ -115,4 +115,7 @@ Model Switch :
 
 Performance Section : 
 
+   1. created a new branch using command : git checkout -b finalize-landing-page
+
+   2. created a new file under components called Performance.jsx
    
